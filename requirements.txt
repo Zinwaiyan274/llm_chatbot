@@ -1,12 +1,5 @@
 pandas
 pandasai
-bs4
 langchain
-tabulate
-tiktoken
-chromadb
-flask
-openpyxl
-SQLAlchemy
-flask_sqlalchemy
-cachetools
+fastapi
+uvicorn
