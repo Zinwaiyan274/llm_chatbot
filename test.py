@@ -32,8 +32,8 @@ async def main(item: Query):
         query = item.query
         langchain_sdf.chat(f" pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... {query}")
 
-        # Convert SmartDataframe to a regular pandas DataFrame
-        converted_df = langchain_sdf.to_pandas_dataframe()
+        # Access the underlying DataFrame
+        converted_df = langchain_sdf.data
 
         # Convert the DataFrame to JSON
         converted_json = converted_df.to_json(orient='records')
