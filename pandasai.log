@@ -4366,3 +4366,444 @@ In the answer, you must never write the "technical" names of the tables.
 Based on the last message in the conversation:
 - return the updated analyze_data function wrapped within ```python ```
 2023-11-18 22:36:22 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:23:23 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:23:23 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:23:23 [INFO] Prompt ID: 2111d1f1-7472-4768-962b-fd69dff726a5
+2023-11-20 18:23:23 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:23:23 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:24:02 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:24:02 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:24:02 [INFO] Prompt ID: 0ca1b9b1-31e0-4f4c-a7a4-30423fdc8f88
+2023-11-20 18:24:02 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:24:03 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:24:41 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:24:42 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:24:42 [INFO] Prompt ID: a221571e-0a32-4032-851d-daf442300862
+2023-11-20 18:24:42 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:24:42 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:27:49 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:27:49 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:27:49 [INFO] Prompt ID: 9270e0c7-06e6-4af7-bbb5-161797128eaf
+2023-11-20 18:27:49 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:27:49 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:28:51 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:28:51 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:28:51 [INFO] Prompt ID: 7ec87069-ec00-4a21-b32d-01ca92c82658
+2023-11-20 18:28:51 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:28:51 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:30:04 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:30:04 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:30:04 [INFO] Prompt ID: 9367fbdd-6cc2-40cb-ac46-5e13e3410ec0
+2023-11-20 18:30:04 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:30:05 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:31:53 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:31:53 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:31:53 [INFO] Prompt ID: f4f9f70b-8d80-4219-8160-b2b6fb38902e
+2023-11-20 18:31:53 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:31:54 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:33:28 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:33:28 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:33:28 [INFO] Prompt ID: bce40adb-8e55-412f-9fc7-c025dc9d5583
+2023-11-20 18:33:28 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:33:28 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"
+2023-11-20 18:33:43 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+2023-11-20 18:33:43 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-20 18:33:43 [INFO] Prompt ID: d9c9a8c7-fdb1-4e9e-b01e-9dbd81f71179
+2023-11-20 18:33:43 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me apartments with swimming pool and garden
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-20 18:33:43 [INFO] HTTP Request: POST https://api.openai.com/v1/completions "HTTP/1.1 401 Unauthorized"

@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from pandasai import SmartDataframe
 from langchain.llms import OpenAI
+import json
 
 app = FastAPI()
 
@@ -36,9 +37,11 @@ async def main(item: Query):
         converted_df = langchain_sdf.dataframe
 
         # Convert the DataFrame to JSON
-        converted_json = converted_df.to_json(orient='records')
+        data = converted_df.Apartments.to_json()
+        json_data = json.loads(data)
 
-        return {"output": converted_df}
+
+        return json_data
     except Exception as e:
         return {"error": str(e)}
 
