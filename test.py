@@ -1,8 +1,9 @@
 import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel
-from pandasai.smart_dataframe import SmartDataframe
+from pandasai import SmartDataframe
 from langchain.llms import OpenAI
+import json
 
 app = FastAPI()
 
@@ -33,12 +34,14 @@ async def main(item: Query):
         langchain_sdf.chat(f" pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... {query}")
 
         # Access the underlying DataFrame
-        converted_df = langchain_sdf.data
+        converted_df = langchain_sdf.dataframe
 
         # Convert the DataFrame to JSON
-        converted_json = converted_df.to_json(orient='records')
+        data = converted_df.Apartments.to_json()
+        json_data = json.loads(data)
 
-        return {"output": converted_json}
+
+        return json_data
     except Exception as e:
         return {"error": str(e)}
 
