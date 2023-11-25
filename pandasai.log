@@ -3684,3 +3684,54 @@ In the answer, you must never write the "technical" names of the tables.
 Based on the last message in the conversation:
 - return the updated analyze_data function wrapped within ```python ```
 2023-11-22 10:40:22 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: sk-rlIYH***************************************8Dr0. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
+2023-11-25 21:41:50 [INFO] Question:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me the apt that have gym and swimming pool
+2023-11-25 21:41:50 [INFO] Running PandasAI with langchain_openai LLM...
+2023-11-25 21:41:50 [INFO] Prompt ID: ae35b0af-e860-44c0-8637-26e3fa085db6
+2023-11-25 21:41:50 [INFO] Using prompt: You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 35 rows and 32 columns.
+This is the metadata of the dataframe dfs[0]:
+Apartments,Swimming Pool,BBQ Grill,Fireside Seating,Community Garden,Gym/Fitness Center,Basket Ball Court,Tennis Court,Rooftop Lounge,Clubhouse/Resident Lounge,Business room/Confrence Room,Gameroom,Cofee Bar,EV Charger,Skyline Views,Package Lockers,Elevators,Allow Pets,Dog Park,Downwash Station,Parking Available,Covered Parking,Garage Parking,Bike Stalls,Fire Place,High Ceilings,Ceiling Fans,Premium Lighting,Granite Counter Tops,Island Kitchen,Stainless Steel Appliances,Washer Dryer
+The Monroe,1,1,1,0,1,0,0,0,1,1,0,1,0,1,1,1,0,1,0,0,0,0,0,0,1,1,1,1,1,1,1
+East Vue Ranch Apartments,1,1,1,0,1,0,0,0,1,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,1,1,1,0,1,1
+Brixton South Shore,0,0,0,0,1,0,0,0,1,1,0,1,0,0,1,1,1,1,0,1,1,1,0,0,1,1,1,1,1,1,1
+The Mont Apartments,1,1,0,1,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,1,1,1,0,0,0,0,0,1,1,1,1
+Arise Riverside,1,1,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,0,0,0,0,1,1,1,0,1,1
+</dataframe>
+
+<conversation>
+User:  pls output me with pandas dataframe, 0 means there is no [column name], 1 means that Apartments have [column name].... show me the apt that have gym and swimming pool
+</conversation>
+
+This is the initial python function. Do not change the params. Given the context, use the right dataframes.
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data, using the provided dataframes (`dfs`).
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart you must save it as an image in temp_chart.png and not show the chart.)
+    If the user requests to create a chart, utilize the Python matplotlib library to generate high-quality graphics that will be saved directly to a file.
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": f"The highest salary is {highest_salary}." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Take a deep breath and reason step-by-step. Act as a senior data analyst.
+In the answer, you must never write the "technical" names of the tables.
+Based on the last message in the conversation:
+- return the updated analyze_data function wrapped within ```python ```
+2023-11-25 21:42:06 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: sk-rlIYH***************************************8Dr0. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
