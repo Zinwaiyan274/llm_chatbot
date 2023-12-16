@@ -12,9 +12,9 @@ df = pd.read_excel('A.L.I2.xlsx')
 
 # Create a dictionary containing the API token
 model_kwargs = {
-    "api_key": "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"
+    "api_key": "KEY"
 }
-llm = OpenAI(api_key="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")
+llm = OpenAI(api_key="KEY")
 
 langchain_sdf = SmartDataframe(df, config={"llm": llm})
 
